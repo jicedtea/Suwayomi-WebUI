@@ -79,9 +79,6 @@ export const MangaBadges = ({
                     {t('manga.button.in_library')}
                 </Typography>
             )}
-            {((showUnreadBadge && mode === 'default') || mode === 'duplicate') && (unread ?? 0) > 0 && (
-                <Badge sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>{unread}</Badge>
-            )}
             {((showDownloadBadge && mode === 'default') || mode === 'duplicate') && (downloadCount ?? 0) > 0 && (
                 <Badge
                     sx={{
@@ -91,6 +88,9 @@ export const MangaBadges = ({
                 >
                     {downloadCount}
                 </Badge>
+            )}
+            {((showUnreadBadge && mode === 'default') || mode === 'duplicate') && (unread ?? 0) > 0 && (
+                <Badge sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText' }}>{unread}</Badge>
             )}
         </BadgeContainer>
     );
